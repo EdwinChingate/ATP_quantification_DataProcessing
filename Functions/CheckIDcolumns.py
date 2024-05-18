@@ -1,5 +1,5 @@
 from RemoveColumns import *
-def CheckIDcolumns(DFATP):
+def CheckIDcolumns(DFATP): #In case the table was moved
     Columns0=DFATP.columns
     Columns=pd.DataFrame(Columns0,columns=['Col'])
     if sum(Columns['Col']=='<>')>0:

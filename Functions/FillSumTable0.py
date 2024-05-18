@@ -1,6 +1,6 @@
-from CleanATPTable import *
-from EmptySumRawTable import *
-from FillSamplesID import *
+from CleanATPTable import * #
+from EmptySumRawTable import * #
+from FillSamplesID import * #
 
 def FillSumTable0(FileName,SumTab=0):
     Data0=pd.ExcelFile(FileName)

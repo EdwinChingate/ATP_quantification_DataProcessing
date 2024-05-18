@@ -1,5 +1,5 @@
-from RecordedRows import *
-from CheckIDcolumns import *
+from RecordedRows import * #
+from CheckIDcolumns import * #
 def CleanATPTable(DFAT):    
     DFATP=DFAT.copy()
     if sum(DFATP.index=='<>')+sum(DFATP.index=='A')==0:
