@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 from EmptySumRawTable import *
+import os
+import numpy as np
 def ATPQuantification(CalCurFile='',name='',Folder=os.getcwd(),Save=0):
     if CalCurFile=='':
         CalCurDB=pd.read_excel(name,index_col=0)
@@ -19,7 +21,7 @@ def ATPQuantification(CalCurFile='',name='',Folder=os.getcwd(),Save=0):
         DFn.index=np.arange(mDF,len(indexDFn)+mDF)
         Slope=CalCurDB.loc[x,'Slope']
         Intercept=CalCurDB.loc[x,'Intercept']
-        DFn['ATPConc(nM)']=(DFn['Luminescence']-Intercept)/Slope*1000
+        DFn['ATPConc(nM)']=np.exp((np.log(DFn['Luminescence'])-Intercept)/Slope)*1000
         DF=DF.append(DFn)        
     DF=DF.drop('Del')
     DF=DF.sort_values(by='Time(days)')

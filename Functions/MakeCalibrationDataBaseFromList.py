@@ -2,6 +2,7 @@ from CalibrationCurveDF import *
 from FillDataBaseCalibration import *
 import pandas as pd
 from datetime import datetime
+import os
 def MakeCalibrationDataBaseFromList(fileS,Folder=os.getcwd(),Save=0):  
     List=list(pd.read_csv(fileS,index_col=0)['0'])
     DFcalibration=CalibrationCurveDF()

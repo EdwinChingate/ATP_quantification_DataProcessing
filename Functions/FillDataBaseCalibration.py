@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from CutW import *
+from CalibrationCurveDF import *
 def FillDataBaseCalibration(StructuratedLumin='',file='',MinSt=5,MaxSt=0,DFcalibration=CalibrationCurveDF(),MolecularWeightSt=551.1,FirstMass=6.889,FirstVolume=25,FirstDilution=500):
     if StructuratedLumin=='':
         DF=pd.read_excel(file,index_col=0)

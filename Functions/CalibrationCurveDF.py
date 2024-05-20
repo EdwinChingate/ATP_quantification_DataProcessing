@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
-def CalibrationCurveDF():    columns=['Intercept','Slope','CoefficientofDetermination','MinSt','MaxSt','LimitofDetection','LimitofQuantification','Researcher','FirstMass(mg)','MolecularWeightSt(Da)','FirstVolume(mL)','InitialConcentration(uM)','FirstDilution']
+def CalibrationCurveDF():
+    columns=['Intercept','Slope','CoefficientofDetermination','MinSt','MaxSt','LimitofDetection','LimitofQuantification','Researcher','FirstMass(mg)','MolecularWeightSt(Da)','FirstVolume(mL)','InitialConcentration(uM)','FirstDilution']
     Standards=[]
     StandardsC=[]
     for x in np.arange(1,7):

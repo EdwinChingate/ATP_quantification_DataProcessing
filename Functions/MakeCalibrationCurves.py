@@ -1,7 +1,7 @@
 import pandas as pd
 from scipy import stats
-def MakeCalibrationCurves(file='',name='',Save=0): #Better to take a simmilar approach as with the calibration curves for the TOrCs, so... check one by one... with the widgets!
-    
+import numpy as np
+def MakeCalibrationCurves(file='',name='',Save=0): #Better to take a simmilar approach as with the calibration curves for the TOrCs, so... check one by one... with the widgets!    
     if file=='':
         CalCurDB=pd.read_excel(name,index_col=0)
     else:
@@ -14,8 +14,8 @@ def MakeCalibrationCurves(file='',name='',Save=0): #Better to take a simmilar ap
         MinSt=CalCurDB.loc[x]['MinSt']
         MaxSt=CalCurDB.loc[x]['MaxSt']        
         ConvCon=float(CalCurDB.loc[x]['InitialConcentration(uM)'])/float(CalCurDB.loc[x]['FirstDilution'])
-        ATPCon=list(ConvCon*CalCurDB.loc['DilutionsS'][MaxSt:MinSt])
-        ATPLum=list(CalCurDB.loc[x][MaxSt:MinSt])
+        ATPCon=np.log(list(ConvCon*CalCurDB.loc['DilutionsS'][MaxSt:MinSt]))
+        ATPLum=np.log(list(CalCurDB.loc[x][MaxSt:MinSt]))
         print(x)
         reg=stats.linregress(ATPCon,ATPLum)  
         CalCurDB.loc[x,['Intercept','Slope','CoefficientofDetermination']]=[reg[1],reg[0],reg[2]**2]        
