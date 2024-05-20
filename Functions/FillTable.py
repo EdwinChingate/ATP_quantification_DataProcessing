@@ -1,8 +1,9 @@
+import numpy as np
+import pandas as pd
 from FillSumTable0 import *
 from ExtractTime import *
 from TimeRef import *
 from CleanATPTable import *
-
 
 def FillTable(FileName):
     Fill0=FillSumTable0(FileName)
@@ -36,7 +37,7 @@ def FillTable(FileName):
                 c=c+1
                 break
             except:   
-                print(x)
+                print(FileName,x)
                 k=1
                 break
     return [Tsam[2],Tsam[3]]

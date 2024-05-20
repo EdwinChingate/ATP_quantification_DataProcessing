@@ -1,3 +1,4 @@
+import pandas as pd
 from RemoveColumns import *
 def CheckIDcolumns(DFATP): #In case the table was moved
     Columns0=DFATP.columns

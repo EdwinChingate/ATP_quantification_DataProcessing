@@ -1,10 +1,12 @@
+import numpy as np
+import pandas as pd
 from RecordedRows import * #
 from CheckIDcolumns import * #
 def CleanATPTable(DFAT):    
     DFATP=DFAT.copy()
     if sum(DFATP.index=='<>')+sum(DFATP.index=='A')==0:
         DFATP=CheckIDcolumns(DFATP)
-    if sum(np.array(DFATP=='A'))>1:
+    if sum(sum(np.array(DFATP=='A')))>1:
         return 0
     ATPTable=pd.DataFrame(RecordedRows(DFATP))
     ATPTable=ATPTable[ATPTable.columns[:12]]
