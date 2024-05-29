@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 def CalibrationCurveDF():
+    #Add some columns for the explicit date, one for the year, one for the month, one for the day, and so on. The same as with the mainfile
     columns=['Intercept','Slope','CoefficientofDetermination','MinSt','MaxSt','LimitofDetection','LimitofQuantification','Researcher','FirstMass(mg)','MolecularWeightSt(Da)','FirstVolume(mL)','InitialConcentration(uM)','FirstDilution']
     Standards=[]
     StandardsC=[]
